@@ -9,30 +9,41 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    
     @IBOutlet weak var fahrenheitBtn: UIButton!
+    //@IBOutlet weak var clubNameLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func fahrenheitBtnPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "showDrinkSearch1", sender: self)
+    
+    @IBAction func pressFahrenheitBtn(_ sender: Any) {
+        NotificationCenter.default.post(name: .fahrenheit, object: nil)
+        //self.performSegue(withIdentifier: "showDrinkSearch", sender: self)
     }
     
-    @IBAction func templeBtnPressed(_ sender: Any){
-        self.performSegue(withIdentifier: "showDrinkSearchTemple", sender: self)
+    @IBAction func pressTempleBtn(_ sender: Any){
+        NotificationCenter.default.post(name: .temple, object: nil)
+        //self.performSegue(withIdentifier: "showDrinkSearch", sender: self)
     }
-    @IBAction func lvl44BtnPressed(_ sender: Any) {
-    self.performSegue(withIdentifier: "showDrinkSearchLvl44", sender: self)
+    
+    @IBAction func pressLevel44Btn(_ sender: Any) {
+        NotificationCenter.default.post(name: .level44, object: nil)
+        //self.performSegue(withIdentifier: "showDrinkSearch", sender: self)
     }
-    @IBAction func pureBtnPressed(_ sender: Any) {
-         self.performSegue(withIdentifier: "showDrinkSearchPure", sender: self)
+    
+    @IBAction func pressPureBtn(_ sender: Any) {
+        NotificationCenter.default.post(name: .pure, object: nil)
+        //self.performSegue(withIdentifier: "showDrinkSearch", sender: self)
+    }
+    
+    @IBAction func returnBtnPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "returnVenueSearch", sender: self)
     }
     
     

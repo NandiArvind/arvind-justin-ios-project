@@ -58,49 +58,47 @@
                                 <rect key="frame" x="0.0" y="202" width="414" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="fahrenheitBtnPressed:" destination="R4d-gN-R8M" eventType="touchUpInside" id="PBB-re-2yy"/>
-                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearch1" id="dwq-9w-97n"/>
+                                    <action selector="pressFahrenheitBtn:" destination="R4d-gN-R8M" eventType="touchUpInside" id="8se-Rx-0RX"/>
+                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearch" id="tkL-DO-9LJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CI-8h-8r9" userLabel="templeBtn">
                                 <rect key="frame" x="0.0" y="336" width="414" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearchTemple" id="Wn7-nb-5Ab"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bef-6l-sIc" userLabel="lvl44Btn">
-                                <rect key="frame" x="0.0" y="454" width="414" height="126"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="lvl44BtnPressed:" destination="R4d-gN-R8M" eventType="touchUpInside" id="BnH-oB-mAW"/>
-                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearchLvl44" id="1kI-EJ-pt1"/>
+                                    <action selector="pressTempleBtn:" destination="R4d-gN-R8M" eventType="touchUpInside" id="9eK-FU-a4S"/>
+                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearch" id="0yg-iI-Qto"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOU-Wj-Tty" userLabel="pureBtn">
                                 <rect key="frame" x="0.0" y="588" width="414" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="pureBtnPressed:" destination="R4d-gN-R8M" eventType="touchUpInside" id="OWw-Uw-HPk"/>
-                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearchPure" id="bYo-5E-Xto"/>
+                                    <action selector="pressPureBtn:" destination="R4d-gN-R8M" eventType="touchUpInside" id="eeJ-r8-aEe"/>
+                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearch" id="gsK-CB-25Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Yd-Wk-lzy" userLabel="level44Btn">
+                                <rect key="frame" x="0.0" y="460" width="414" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="pressLevel44Btn:" destination="R4d-gN-R8M" eventType="touchUpInside" id="f4d-oM-s4y"/>
+                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearch" id="7N2-g9-Za6"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qyH-UM-SAc"/>
                     </view>
-                    <connections>
-                        <outlet property="fahrenheitBtn" destination="Vw9-b5-bGb" id="d2y-wp-vAX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgD-MA-5MU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="834.78260869565224" y="132.88043478260872"/>
         </scene>
-        <!--View Controller-->
+        <!--Drink Search-->
         <scene sceneID="Nhq-bW-9wC">
             <objects>
-                <viewController id="G0v-7n-9MX" sceneMemberID="viewController">
+                <viewController id="G0v-7n-9MX" customClass="DrinkSearch" customModule="SlideV1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RTE-hj-sLD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,19 +128,21 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMy-xC-VHN" userLabel="Margarita">
                                 <rect key="frame" x="168" y="195" width="79" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUi-su-858">
-                                <rect key="frame" x="206" y="50" width="256" height="127"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkO-Sa-0V8" userLabel="clubNameLabel">
+                                <rect key="frame" x="20" y="60" width="374" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fqY-jl-q1c"/>
                     </view>
+                    <connections>
+                        <outlet property="clubNameLabel" destination="HkO-Sa-0V8" id="8uk-9T-fOL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCT-uf-UUS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="W6K-r1-c90" userLabel="Exit" sceneMemberID="exit"/>
@@ -156,7 +156,7 @@
         <image name="venueSearch" width="616" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bYo-5E-Xto"/>
+        <segue reference="7N2-g9-Za6"/>
         <segue reference="Yeh-gb-vWz"/>
     </inferredMetricsTieBreakers>
 </document>
