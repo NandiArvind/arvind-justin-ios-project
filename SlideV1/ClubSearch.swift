@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class ClubSearch: UIViewController {
     
     @IBOutlet weak var fahrenheitBtn: UIButton!
     //@IBOutlet weak var clubNameLabel: UILabel?
@@ -45,16 +45,4 @@ class SecondViewController: UIViewController {
     @IBAction func returnBtnPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "returnVenueSearch", sender: self)
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

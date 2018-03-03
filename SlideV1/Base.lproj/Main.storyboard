@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="136.23188405797103" y="132.06521739130434"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Club Search-->
         <scene sceneID="2DR-d4-5bG">
             <objects>
-                <viewController id="R4d-gN-R8M" customClass="SecondViewController" customModule="SlideV1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="R4d-gN-R8M" customClass="ClubSearch" customModule="SlideV1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PYZ-7P-Fp6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
