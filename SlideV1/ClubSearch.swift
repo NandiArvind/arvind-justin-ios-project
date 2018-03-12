@@ -11,7 +11,7 @@ import UIKit
 class ClubSearch: UIViewController {
     
     @IBOutlet weak var fahrenheitBtn: UIButton!
-    //@IBOutlet weak var clubNameLabel: UILabel?
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,16 @@ class ClubSearch: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func pressAveryBtn(_ sender: Any) {
+        NotificationCenter.default.post(name: .avery, object: nil)
+        //self.performSegue(withIdentifier: "showDrinkSearch", sender: self)
+    }
+    
+    @IBAction func pressEnsoBtn(_ sender: Any) {
+        NotificationCenter.default.post(name: .enso, object: nil)
+        //self.performSegue(withIdentifier: "showDrinkSearch", sender: self)
     }
     
     @IBAction func pressFahrenheitBtn(_ sender: Any) {

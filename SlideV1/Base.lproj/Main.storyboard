@@ -28,7 +28,6 @@
                     </view>
                     <connections>
                         <outlet property="landingPg" destination="U7B-Uu-xUC" id="RIo-1o-32A"/>
-                        <outlet property="venueSearchBar" destination="kBz-Q6-za3" id="TGd-2Y-eYE"/>
                         <segue destination="R4d-gN-R8M" kind="show" identifier="showVenueSearch" id="pC5-am-agp"/>
                     </connections>
                 </viewController>
@@ -40,60 +39,132 @@
         <scene sceneID="2DR-d4-5bG">
             <objects>
                 <viewController id="R4d-gN-R8M" customClass="ClubSearch" customModule="SlideV1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PYZ-7P-Fp6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <view key="view" contentMode="scaleToFill" id="PYZ-7P-Fp6" userLabel="Root View">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="950"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="venueSearch" translatesAutoresizingMaskIntoConstraints="NO" id="GrY-Vo-zfS">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for a Venue" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBz-Q6-za3">
-                                <rect key="frame" x="0.0" y="104" width="414" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vw9-b5-bGb" userLabel="fahrenheitBtn">
-                                <rect key="frame" x="0.0" y="202" width="414" height="126"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="pressFahrenheitBtn:" destination="R4d-gN-R8M" eventType="touchUpInside" id="8se-Rx-0RX"/>
-                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearch" id="tkL-DO-9LJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CI-8h-8r9" userLabel="templeBtn">
-                                <rect key="frame" x="0.0" y="336" width="414" height="116"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="pressTempleBtn:" destination="R4d-gN-R8M" eventType="touchUpInside" id="9eK-FU-a4S"/>
-                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearch" id="0yg-iI-Qto"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOU-Wj-Tty" userLabel="pureBtn">
-                                <rect key="frame" x="0.0" y="588" width="414" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="pressPureBtn:" destination="R4d-gN-R8M" eventType="touchUpInside" id="eeJ-r8-aEe"/>
-                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearch" id="gsK-CB-25Z"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Yd-Wk-lzy" userLabel="level44Btn">
-                                <rect key="frame" x="0.0" y="460" width="414" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="pressLevel44Btn:" destination="R4d-gN-R8M" eventType="touchUpInside" id="f4d-oM-s4y"/>
-                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearch" id="7N2-g9-Za6"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSf-OC-dqs">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="950"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVQ-t6-rfc" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="950"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Slide Glass Emblem" translatesAutoresizingMaskIntoConstraints="NO" id="MQ6-FA-WIk">
+                                                <rect key="frame" x="23" y="24" width="53" height="58"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vw9-b5-bGb" userLabel="fahrenheitBtn">
+                                                <rect key="frame" x="19" y="408" width="377" height="113"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="SFMono-Regular" family="SF Mono" pointSize="64"/>
+                                                <state key="normal" title="Fahrenheit" backgroundImage="Fahrenheit Button"/>
+                                                <connections>
+                                                    <action selector="pressFahrenheitBtn:" destination="R4d-gN-R8M" eventType="touchUpInside" id="8se-Rx-0RX"/>
+                                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearch" id="tkL-DO-9LJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CI-8h-8r9" userLabel="templeBtn">
+                                                <rect key="frame" x="20" y="166" width="377" height="113"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="64"/>
+                                                <state key="normal" title="Temple" backgroundImage="Temple Button"/>
+                                                <connections>
+                                                    <action selector="pressTempleBtn:" destination="R4d-gN-R8M" eventType="touchUpInside" id="9eK-FU-a4S"/>
+                                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearch" id="0yg-iI-Qto"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOU-Wj-Tty" userLabel="pureBtn">
+                                                <rect key="frame" x="20" y="529" width="377" height="113"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                <state key="normal" title="Pure" backgroundImage="Pure Button"/>
+                                                <connections>
+                                                    <action selector="pressPureBtn:" destination="R4d-gN-R8M" eventType="touchUpInside" id="eeJ-r8-aEe"/>
+                                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearch" id="gsK-CB-25Z"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Yd-Wk-lzy" userLabel="level44Btn">
+                                                <rect key="frame" x="19" y="650" width="377" height="113"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="64"/>
+                                                <state key="normal" title="LVL 44" backgroundImage="LVL 44 Button"/>
+                                                <connections>
+                                                    <action selector="pressLevel44Btn:" destination="R4d-gN-R8M" eventType="touchUpInside" id="f4d-oM-s4y"/>
+                                                    <segue destination="G0v-7n-9MX" kind="show" identifier="showDrinkSearch" id="7N2-g9-Za6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUJ-g8-M3h" userLabel="ensoBtn">
+                                                <rect key="frame" x="20" y="287" width="377" height="113"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                <state key="normal" title="Enso" backgroundImage="Enso Button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressEnsoBtn:" destination="R4d-gN-R8M" eventType="touchUpInside" id="Knt-VQ-5xD"/>
+                                                    <segue destination="G0v-7n-9MX" kind="show" id="VXE-ei-UMN"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clubs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4p-Zo-AA8">
+                                                <rect key="frame" x="107" y="20" width="207" height="67"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <searchBar contentMode="redraw" fixedFrame="YES" text="" placeholder="Search for a venue" translatesAutoresizingMaskIntoConstraints="NO" id="usG-ZE-IXp">
+                                                <rect key="frame" x="0.0" y="105" width="414" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </searchBar>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Te3-69-RDL" userLabel="averyBtn">
+                                                <rect key="frame" x="19" y="771" width="377" height="113"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="68"/>
+                                                <state key="normal" title="Avery" backgroundImage="Avery Button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressAveryBtn:" destination="R4d-gN-R8M" eventType="touchUpInside" id="mqc-k8-eac"/>
+                                                    <segue destination="G0v-7n-9MX" kind="show" id="bNs-JC-zJm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="414" id="aZR-p3-zsZ"/>
+                                            <constraint firstAttribute="height" constant="950" id="new-V8-IWR"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fVQ-t6-rfc" firstAttribute="top" secondItem="MSf-OC-dqs" secondAttribute="top" id="4Ar-Vw-z6Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="fVQ-t6-rfc" secondAttribute="trailing" id="4xc-FF-aev"/>
+                                    <constraint firstItem="fVQ-t6-rfc" firstAttribute="leading" secondItem="MSf-OC-dqs" secondAttribute="leading" id="FnH-gx-JQI"/>
+                                    <constraint firstAttribute="bottom" secondItem="fVQ-t6-rfc" secondAttribute="bottom" id="SER-TN-4hT"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qyH-UM-SAc" firstAttribute="bottom" secondItem="MSf-OC-dqs" secondAttribute="bottom" id="3T7-NI-oIC"/>
+                            <constraint firstAttribute="trailing" secondItem="MSf-OC-dqs" secondAttribute="trailing" id="MWW-Ng-a3h"/>
+                            <constraint firstItem="MSf-OC-dqs" firstAttribute="leading" secondItem="PYZ-7P-Fp6" secondAttribute="leading" id="RiK-C0-f1O"/>
+                            <constraint firstItem="qyH-UM-SAc" firstAttribute="trailing" secondItem="MSf-OC-dqs" secondAttribute="trailing" id="VXa-Zu-TOz"/>
+                            <constraint firstItem="MSf-OC-dqs" firstAttribute="leading" secondItem="PYZ-7P-Fp6" secondAttribute="leading" id="cV9-Ja-jja"/>
+                            <constraint firstItem="qyH-UM-SAc" firstAttribute="bottom" secondItem="MSf-OC-dqs" secondAttribute="bottom" id="f8b-cu-YZ6"/>
+                            <constraint firstItem="MSf-OC-dqs" firstAttribute="top" secondItem="PYZ-7P-Fp6" secondAttribute="top" id="kzr-MB-LtO"/>
+                            <constraint firstAttribute="trailing" secondItem="MSf-OC-dqs" secondAttribute="trailing" id="ukw-qM-Grf"/>
+                            <constraint firstItem="MSf-OC-dqs" firstAttribute="leading" secondItem="PYZ-7P-Fp6" secondAttribute="leading" id="wIG-Cg-N1R"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qyH-UM-SAc"/>
                     </view>
+                    <size key="freeformSize" width="414" height="950"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgD-MA-5MU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834.78260869565224" y="132.88043478260872"/>
+            <point key="canvasLocation" x="831.88405797101461" y="132.06521739130434"/>
         </scene>
         <!--Drink Search-->
         <scene sceneID="Nhq-bW-9wC">
@@ -151,12 +222,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Avery Button" width="377" height="113"/>
         <image name="DrinksMenu" width="1078" height="1927"/>
+        <image name="Enso Button" width="377" height="113"/>
+        <image name="Fahrenheit Button" width="377" height="113"/>
+        <image name="LVL 44 Button" width="377" height="113"/>
         <image name="Landing" width="1080" height="1920"/>
-        <image name="venueSearch" width="616" height="1080"/>
+        <image name="Pure Button" width="377" height="113"/>
+        <image name="Slide Glass Emblem" width="209" height="261"/>
+        <image name="Temple Button" width="377" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7N2-g9-Za6"/>
-        <segue reference="Yeh-gb-vWz"/>
+        <segue reference="0yg-iI-Qto"/>
+        <segue reference="pC5-am-agp"/>
     </inferredMetricsTieBreakers>
 </document>

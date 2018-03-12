@@ -25,11 +25,20 @@ class DrinkSearch: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(setToTemple(notification:)), name: .temple, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setToLevel44(notification:)), name: .level44, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setToPure(notification:)), name: .pure, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setToAvery(notification:)), name: .avery, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setToEnso(notification:)), name: .enso, object: nil)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func setToAvery(notification: NSNotification) {
+        clubNameLabel.text = "Avery"
+    }
+    @objc func setToEnso(notification: NSNotification) {
+        clubNameLabel.text = "Enso"
     }
     
     @objc func setToFahrenheit(notification: NSNotification) {
@@ -51,21 +60,11 @@ class DrinkSearch: UIViewController {
     @IBAction func returnBtnPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "returnVenueSearch", sender: self)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension Notification.Name {
+    static let avery = Notification.Name("avery")
+    static let enso = Notification.Name("enso")
     static let fahrenheit = Notification.Name("fahrenheit")
     static let temple = Notification.Name("temple")
     static let level44 = Notification.Name("level44")
